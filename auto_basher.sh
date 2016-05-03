@@ -9,11 +9,11 @@
 #   REQUIRMENTS:  Linux based OS with sys_basher installed
 #          BUGS:  ---
 #         NOTES:  ---
-#        AUTHOR:  Stephen K Briles
+#        AUTHOR:  Stephen Briles
 #       COMPANY:  Black Diamond Memory
 #       VERSION:  0.3
-#       CREATED:  04.26.2016 - XX:XX
-#      REVISION:  04.28.2016 - 13:06
+#       CREATED:  04.26.2016
+#      REVISION:  04.28.2016
 # ===============================================================================
 
 
@@ -78,52 +78,54 @@ select opt in "${options[@]}" "Quit"
   do
       case $opt in
           "Address - Data Tests" )
-              clear
+
               printf "Selected 'Address - Data Tests'"
               start_basher_promt
-              sys_basher -t 256 -mem [a] -st -r SBT_$startTime
+              sys_basher -t 256 -mem [a] -st -r SBTA_$startTime
               ;;
           "Bank Tests" )
-              clear
+
               printf "Selected 'Bank Tests'"
               start_basher_promt
-              sys_basher -t 256 -mem [b] -st -r SBT_$startTime
+              sys_basher -t 256 -mem [b] -st -r SBTB_$startTime
               ;;
           "Fixed Pattern Tests" )
-              clear
+
               printf "Selected 'Fixed Pattern Tests'"
               start_basher_promt
-              sys_basher -t 256 -mem [p] -st -r SBT_$startTime
+              sys_basher -t 256 -mem [p] -st -r SBTP_$startTime
               ;;
           "Random Data Tests" )
-              clear
+
               printf "Selected 'Random Data Tests'"
               start_basher_promt
-              sys_basher -t 256 -mem [r] -st -r SBT_$startTime
+              sys_basher -t 256 -mem [r] -st -r SBTR_$startTime
               ;;
           "Walking Ones/Zeros Data Tests" )
-              clear
+
               printf "Selected 'Walking Ones/Zeros Data Tests'"
               start_basher_promt
-              sys_basher -t 256 -mem [w] -st -r SBT_$startTime
+              sys_basher -t 256 -mem [w] -st -r SBTW_$startTime
               ;;
           "Bit Reversed Address Tests" )
-              clear
+
               printf "Selected 'Bit Reversed Address Tests'"
               start_basher_promt
-              sys_basher -t 256 -mem [v] -st -r SBT_$startTime
+              sys_basher -t 256 -mem [v] -st -r SBTV_$startTime
               ;;
-          "All" )
-              clear
+          "All Tests" )
+
               printf "Selected to Run All Tests"
               start_basher_promt
-              sys_basher -t 256 -m -st -r SBT_$startTime
+              sys_basher -t 256 -m -st
               ;;
           "Quit" )
+
               clear
               break
               ;;
           * )
+
               clear
               printf "INVALID SELECTION - PLEASE TRY AGAIN\n"
               main_menu
