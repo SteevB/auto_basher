@@ -88,45 +88,47 @@ select opt in "${options[@]}" "Quit"
               printf "Selected 'Bank Tests'"
               start_basher_promt
               sys_basher -t 256 -mem [b] -st -r SBTB_$startTime
+              main_menu
               ;;
           "Fixed Pattern Tests" )
 
               printf "Selected 'Fixed Pattern Tests'"
               start_basher_promt
               sys_basher -t 256 -mem [p] -st -r SBTP_$startTime
+              main_menu
               ;;
           "Random Data Tests" )
 
               printf "Selected 'Random Data Tests'"
               start_basher_promt
               sys_basher -t 256 -mem [r] -st -r SBTR_$startTime
+              main_menu
               ;;
           "Walking Ones/Zeros Data Tests" )
 
               printf "Selected 'Walking Ones/Zeros Data Tests'"
               start_basher_promt
               sys_basher -t 256 -mem [w] -st -r SBTW_$startTime
+              main_menu
               ;;
           "Bit Reversed Address Tests" )
 
               printf "Selected 'Bit Reversed Address Tests'"
               start_basher_promt
               sys_basher -t 256 -mem [v] -st -r SBTV_$startTime
+              main_menu
               ;;
           "All Tests" )
 
               printf "Selected to Run All Tests"
               start_basher_promt
               sys_basher -t 256 -m -st
+              main_menu
               ;;
           "Quit" )
-
-              clear
               break
               ;;
           * )
-
-              clear
               printf "INVALID SELECTION - PLEASE TRY AGAIN\n"
               main_menu
               ;;
